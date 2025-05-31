@@ -20,3 +20,18 @@ function getHumanChoice() {
   let humanChoice = prompt("What are you choosing: Rock, Paper or Scissors");
   return humanChoice;
 }
+
+// Score
+
+let humanScore = 0;
+let computerScore = 0;
+
+// Round
+
+function playRound(human, computer) {
+  let humanChLowerCase = human.toLowerCase();
+  let humanChCaseIns = humanChLowerCase.replace(
+    humanChLowerCase[0],
+    humanChLowerCase[0].toUpperCase()
+  );
+}
