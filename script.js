@@ -1,15 +1,14 @@
-// Computer Choice
-let rndInt = Math.floor(Math.random() * 3) + 1;
-
 function getComputerChoice() {
+  let rndInt = Math.floor(Math.random() * 3) + 1;
+
   if (rndInt == 1) {
-    let computerChoice = "rock";
+    let computerChoice = "Rock";
     return computerChoice;
   } else if (rndInt == 2) {
-    let computerChoice = "paper";
+    let computerChoice = "Paper";
     return computerChoice;
   } else {
-    let computerChoice = "scissors";
+    let computerChoice = "Scissors";
     return computerChoice;
   }
 }
@@ -29,9 +28,43 @@ let computerScore = 0;
 // Round
 
 function playRound(human, computer) {
-  let humanChLowerCase = human.toLowerCase();
-  let humanChCaseIns = humanChLowerCase.replace(
-    humanChLowerCase[0],
-    humanChLowerCase[0].toUpperCase()
+  let humanChoiceLc = human.toLowerCase();
+  let humanChoiceCapitalize = humanChoiceLc.replace(
+    humanChoiceLc[0],
+    humanChoiceLc[0].toUpperCase()
   );
+
+  if (humanChoiceCapitalize == computer) {
+    console.log(`It's a draw!`);
+  } else if (
+    (humanChoiceCapitalize == "Rock" && computer == "Paper") ||
+    (humanChoiceCapitalize == "Paper" && computer == "Scissors") ||
+    (humanChoiceCapitalize == "Scissors" && computer == "Rock")
+  ) {
+    console.log(`You lose! ${computer} beats ${humanChoiceCapitalize}`);
+    computerScore++;
+  } else if (
+    (humanChoiceCapitalize == "Rock" && computer == "Scissors") ||
+    (humanChoiceCapitalize == "Paper" && computer == "Rock") ||
+    (humanChoiceCapitalize == "Scissors" && computer == "Paper")
+  ) {
+    console.log(`You win! ${humanChoiceCapitalize} beats ${computer}`);
+    humanScore++;
+  }
 }
+
+// playGame function
+
+function playGame() {
+  for (i = 1; i <= 5; i++) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+  }
+
+  console.log(humanScore);
+  console.log(computerScore);
+}
+
+playGame();
