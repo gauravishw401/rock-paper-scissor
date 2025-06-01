@@ -63,8 +63,16 @@ function playGame() {
     playRound(humanSelection, computerSelection);
   }
 
-  console.log(humanScore);
-  console.log(computerScore);
+  if (humanScore > computerScore) {
+    console.log(`Finish! You are the winner of the game:- 
+                 You: ${humanScore}  Computer: ${computerScore}`);
+  } else if (humanScore == computerScore) {
+    console.log(`It's a draw!
+                   You: ${humanScore} Computer: ${computerScore}`);
+  } else {
+    console.log(`Finish! You lost the game:-
+                 You: ${humanScore} Computer: ${computerScore}`);
+  }
 }
 
 playGame();
