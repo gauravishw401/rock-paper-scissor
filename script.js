@@ -37,6 +37,7 @@ const choiceComputer = document.querySelector(".game-computer-choice");
 const output = document.querySelector(".output-para");
 const scoreHuman = document.querySelector(".game-human-score");
 const scoreComputer = document.querySelector(".game-computer-score");
+const currentRound = document.querySelector(".header-rounds");
 
 rock.addEventListener("click", () => {
   humanChoice = "ROCK";
@@ -44,7 +45,10 @@ rock.addEventListener("click", () => {
 
   getComputerChoice();
   playRound(humanChoice, computerChoice);
+  return humanChoice;
 });
+
+console.log(humanChoice);
 
 paper.addEventListener("click", () => {
   humanChoice = "PAPER";
@@ -64,20 +68,25 @@ scissors.addEventListener("click", () => {
 
 let humanScore = 0;
 let computerScore = 0;
+let rounds = 0;
 
 // Round
 
 function playRound(human, computer) {
   if (human == computer) {
     output.textContent = `IT'S A DRAW`;
+    rounds++;
+    currentRound.textContent = `ROUND : ${rounds}`;
   } else if (
     (human == "ROCK" && computer == "PAPER") ||
     (human == "PAPER" && computer == "SCISSORS") ||
     (human == "SCISSORS" && computer == "ROCK")
   ) {
+    computerScore++;
+    rounds++;
+    currentRound.textContent = `ROUND : ${rounds}`;
     output.textContent = `You lose! ${computer} beats ${human}`;
 
-    computerScore++;
     scoreComputer.textContent = `COMPUTER : ${computerScore}`;
     scoreHuman.textContent = `YOU : ${humanScore}`;
   } else if (
@@ -88,6 +97,8 @@ function playRound(human, computer) {
     output.textContent = `You win! ${humanChoice} beats ${computer}`;
 
     humanScore++;
+    rounds++;
+    currentRound.textContent = `ROUND : ${rounds}`;
     scoreComputer.textContent = `COMPUTER : ${computerScore}`;
     scoreHuman.textContent = `YOU : ${humanScore}`;
   }
