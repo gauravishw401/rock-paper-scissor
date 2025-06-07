@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* outline: 1px solid #f00 !important; */
+}
+
+body {
+  background-color: lightpink;
+}
+
+.rock-paper-scissors {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 750px;
+  padding-top: 5px;
+  margin-bottom: 4px;
+  margin-top: 20px;
+}
+
+.header-heading {
+  font-size: 50px;
+  margin-bottom: 19px;
+}
+
+.header-rounds {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.header-rules {
+  font-size: 35px;
+}
+
+/* Game Section */
+.game {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-human-heading,
+.game-computer-heading {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+/* .game-human {
+  margin-left: 10px;
+}
+
+.game-computer {
+  margin-right: 10px;
+} */
+
+.game-human,
+.game-computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: 40vw;
+  border: black solid 2px;
+}
+
+.game-human-choice,
+.game-computer-choice {
+  height: 55%; /* 75% */
+  width: 85%;
+  background-color: lightyellow;
+  border: powderblue 2px solid;
+}
+
+.game-human-buttons,
+.game-computer-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+  height: 20%; /* 20% */
+}
+
+.btn {
+  width: 90px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.game {
+  margin-bottom: 35px;
+}
+
+.game-human-score,
+.game-computer-score {
+  font-size: 35px;
+}
+
+/* Output */
+
+.output {
+  width: 750px;
+  background-color: lightgreen;
+  border-radius: 2px;
+  height: 75px;
+  margin-bottom: 10px;
+}
