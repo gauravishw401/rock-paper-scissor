@@ -30,17 +30,11 @@ const scoreComputer = document.querySelector(".game-computer-score");
 const currentRound = document.querySelector(".header-rounds");
 const restartGame = document.querySelector(".header-restart");
 const allButtons = document.querySelectorAll("button");
-
-//
-// console.log(
-//   document.addEventListener("click", function (e) {
-//     console.log(e.target);
-//   })
-// );
+const humanPlayerBtns = document.querySelector(".game-human-buttons button");
+console.log(humanPlayerBtns);
 
 let humanChoice;
 const rock = document.querySelector(".game-human-buttons-rock");
-
 const paper = document.querySelector(".game-human-buttons-paper");
 const scissors = document.querySelector(".game-human-buttons-scissors");
 
@@ -107,32 +101,3 @@ function playRound(human, computer) {
     restartGame.disabled = false;
   }
 }
-
-function displayhumanInput(input) {
-  const humanInput = document.querySelector(".game-human-choice");
-  humanInput.textContent = `YOU CHOOSE ${input}`;
-}
-
-// playGame function
-
-// function playGame() {
-//   for (i = 1; i <= 5; i++) {
-//     let humanSelection = getHumanChoice();
-//     let computerSelection = getComputerChoice();
-
-//     playRound(humanSelection, computerSelection);
-//   }
-
-//   if (humanScore > computerScore) {
-//     console.log(`Finish! You are the winner of the game:-
-//                  You: ${humanScore}  Computer: ${computerScore}`);
-//   } else if (humanScore == computerScore) {
-//     console.log(`It's a draw!
-//                    You: ${humanScore} Computer: ${computerScore}`);
-//   } else {
-//     console.log(`Finish! You lost the game:-
-//                  You: ${humanScore} Computer: ${computerScore}`);
-//   }
-// }
-
-// playGame();
